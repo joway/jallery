@@ -21,7 +21,7 @@
                     Instagram
                   </a>
                   <a class="nav-item" href="https://joway.io" target="_blank">
-                    Author
+                    @Joway
                   </a>
                 </div>
               </div>
