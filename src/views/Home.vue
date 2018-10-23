@@ -80,7 +80,7 @@ export default class Home extends Vue {
 </script>
 <style scoped>
 .site-name {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Permanent Marker', Times, serif;
 }
 .page {
   margin: 0 50px;
