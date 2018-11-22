@@ -33,17 +33,15 @@ jobs:
           name: push newest site
           command: |
             export msg=$(git log --pretty=format:%s -1)
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              if [ -n "$(git status --porcelain)" ]; then
-                mv ./dist /dist
-                git stash
-                git checkout gh-pages
-                find ./ -not -name '.git' -mindepth 1 -maxdepth 1 -print0 | xargs -0 rm -rf --
-                mv /dist/* ./
-                git add .
-                git commit --allow-empty -m "$msg"
-                git push -q https://${GITHUB_TOKEN}@github.com/joway/jallery.git gh-pages --force
-              else
-                echo "no changes";
-              fi
+            if [ -n "$(git status --porcelain)" ]; then
+              mv ./dist /dist
+              git stash
+              git checkout gh-pages
+              find ./ -not -name '.git' -mindepth 1 -maxdepth 1 -print0 | xargs -0 rm -rf --
+              mv /dist/* ./
+              git add .
+              git commit --allow-empty -m "$msg"
+              git push -q https://${GITHUB_TOKEN}@github.com/joway/jallery.git gh-pages --force
+            else
+              echo "no changes";
             fi
