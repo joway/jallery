@@ -4,6 +4,10 @@ workflows:
   build-workflow:
     jobs:
       - build:
+          filters:
+            branches:
+              only:
+                - master
           context: github
 jobs:
   build:
