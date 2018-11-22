@@ -1,7 +1,7 @@
 <template>
   <div class="frame">
     <div class="frame-container">
-      <img class="frame-photo" :src="image.url" />
+      <img class="frame-photo" :src="`https://acmzvywwen.cloudimg.io/width/480/x/${image.url}`" />
     </div>
   </div>
 </template>

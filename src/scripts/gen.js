@@ -2,6 +2,8 @@ const fs = require('fs')
 
 const PHOTOS_DIR = './public/photos'
 const PHOTOS_INDEX_FILENAME = './public/photos/index.json'
+const DOMAIN = process.env.DOMAIN || 'pho.joway.io'
+const SCHEME = process.env.SCHEME || 'https'
 
 function getFileExtension(filename) {
   return `.${filename.split('.').pop()}`
@@ -20,7 +22,7 @@ function gen() {
     const photosList = fs.readdirSync(dirFullName)
     photosList.forEach(function(filename) {
       images.push({
-        url: `/photos/${dirName}/${filename}`,
+        url: `${SCHEME}://${DOMAIN}/photos/${dirName}/${filename}`,
         desc: filename.replace(getFileExtension(filename), '').split('-')[1],
       })
     })
