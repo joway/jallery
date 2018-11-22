@@ -40,7 +40,7 @@ jobs:
               git checkout gh-pages
               find ./ -not -name '.git' -mindepth 1 -maxdepth 1 -print0 | xargs -0 rm -rf --
               mv /dist/* ./
-              mv ./.circleci /.circleci
+              mv /.circleci ./.circleci
               git add .
               git commit --allow-empty -m "$msg"
               git push -q https://${GITHUB_TOKEN}@github.com/joway/jallery.git gh-pages --force
