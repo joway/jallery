@@ -51,7 +51,7 @@
             <div class="col-xs">
               <div class="row end-xs">
                 <div class="col-xs">
-                  <h2 class="section-title">{{ section.title.replace('=', ' ') }}</h2>
+                  <h2 class="section-title">{{ section.title.replace(/=/g, ' ') }}</h2>
                 </div>
               </div>
 
@@ -104,7 +104,7 @@ export default class Home extends Vue {
 
   clickImage(image) {
     this.galleryImageUrl = image.url
-    this.galleryImageDesc = image.desc.replace('=', ' ')
+    this.galleryImageDesc = image.desc.replace(/=/g, ' ')
   }
 }
 </script>
