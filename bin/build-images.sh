@@ -1,8 +1,12 @@
 # /bin/bash
 find ./public/raw -mindepth 2 -maxdepth 2 -type f -name '*.png' -o -name '*.jpg' -exec sh -c '
+  rm -rf ./public/photos
   for f do
     source=$f
     output=${source/raw/photos}
+    base=`basename $output`
+    dirname=${output/$base/''}
+    mkdir -p $dirname
     echo "add watermark: from $source to $output"
     convert -resize 2073600@ $source $output
     width=`identify -format %w $output`
