@@ -1,7 +1,11 @@
 <template>
   <div class="row">
     <div class="col-xs">
-      <Gallery :imageUrl="galleryImageUrl" :imageDesc="galleryImageDesc" @click.native="galleryImageUrl = null;galleryImageDesc=null;"></Gallery>
+      <Gallery
+        :imageUrl="galleryImageUrl"
+        :imageDesc="galleryImageDesc"
+        @click.native="galleryImageUrl = null;galleryImageDesc=null;"
+      ></Gallery>
 
       <div class="row page">
         <div class="col-xs">
@@ -14,29 +18,50 @@
             <div class="col-xs-12 col-md-3">
               <div class="row end-xs">
                 <div class="col-xs nav">
-                  <a class="nav-item" href="https://blog.joway.io" target="_blank">
+                  <a
+                    class="nav-item"
+                    href="https://blog.joway.io"
+                    target="_blank"
+                  >
                     Blog
                   </a>
-                  <a class="nav-item" href="https://www.instagram.com/joway.w/" target="_blank">
+                  <a
+                    class="nav-item"
+                    href="https://www.instagram.com/joway.w/"
+                    target="_blank"
+                  >
                     Instagram
                   </a>
-                  <a class="nav-item" href="https://joway.io" target="_blank">
+                  <a
+                    class="nav-item"
+                    href="https://joway.io"
+                    target="_blank"
+                  >
                     @Joway
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div class="row section" v-for="(section, index) in sections" :key="index">
+          <div
+            class="row section"
+            v-for="(section, index) in sections"
+            :key="index"
+          >
             <div class="col-xs">
               <div class="row end-xs">
                 <div class="col-xs">
-                  <h2 class="section-title">{{ section.title }}</h2>
+                  <h2 class="section-title">{{ section.title.replace('=', ' ') }}</h2>
                 </div>
               </div>
 
               <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3" v-for="(image, index) in section.images" :key="index" @click="galleryImageUrl = image.url; galleryImageDesc = image.desc">
+                <div
+                  class="col-xs-12 col-sm-6 col-md-3"
+                  v-for="(image, index) in section.images"
+                  :key="index"
+                  @click="clickImage(image)"
+                >
                   <div class="row center-xs">
                     <Frame :image="image" />
                   </div>
@@ -75,6 +100,11 @@ export default class Home extends Vue {
     axios.get('/photos/index.json').then(response => {
       this.sections = response.data
     })
+  }
+
+  clickImage(image) {
+    this.galleryImageUrl = image.url
+    this.galleryImageDesc = image.desc.replace('=', ' ')
   }
 }
 </script>
