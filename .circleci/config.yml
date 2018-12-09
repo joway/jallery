@@ -22,12 +22,20 @@ jobs:
             git config --global user.email "joway.w@gmail.com"
             git config --global user.name "Joway.CI"
       - run:
-          name: install
+          name: system install
+          command: |
+            wget https://imagemagick.org/download/binaries/ImageMagick-x86_64-pc-linux-gnu.tar.gz
+            tar xvzf ImageMagick-x86_64-pc-linux-gnu.tar.gz && rm ImageMagick-x86_64-pc-linux-gnu.tar.gz
+            mv ImageMagick-* ImageMagick
+            cp -r ImageMagick/** /
+      - run:
+          name: npm install
           command: |
             npm install
       - run:
           name: build site
           command: |
+            make build-images
             npm run build
       - deploy:
           name: push newest site
