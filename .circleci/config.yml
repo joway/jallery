@@ -28,7 +28,7 @@ jobs:
       - run:
           name: build site
           command: |
-            make
+            make build-index build-web
       - deploy:
           name: push newest site
           command: |
