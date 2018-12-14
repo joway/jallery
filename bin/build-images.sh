@@ -13,7 +13,7 @@ find ./public/raw -mindepth 2 -maxdepth 2 -type f -name '*.png' -o -name '*.jpg'
     height=`identify -format %h $output`
     convert -strip -interlace Plane -quality 70% -background 'none'  -fill white -gravity center \
       -size $(expr ${width} / 10)x$(expr ${height} / 36) \
-      caption:"@Joway Wang" \
+      caption:"@Joway" \
       "$output" +swap -gravity south -geometry +0+$(expr ${height} / 100) -composite "$output"
   done
 ' sh {} +
