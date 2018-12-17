@@ -70,7 +70,8 @@
             </div>
           </div>
 
-          <footer class="row footer">
+          <footer class="row center-xs footer">
+            <h5>Shoot with ❤ </h5>
           </footer>
         </div>
       </div>
