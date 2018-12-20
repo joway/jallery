@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs">
       <Gallery
+        oncontextmenu="return false;"
         :imageUrl="galleryImageUrl"
         :imageDesc="galleryImageDesc"
         @click.native="galleryImageUrl = null;galleryImageDesc=null;"
@@ -58,6 +59,7 @@
               <div class="row">
                 <div
                   class="col-xs-12 col-sm-6 col-md-3"
+                  oncontextmenu="return false;"
                   v-for="(image, index) in section.images"
                   :key="index"
                   @click="clickImage(image)"
