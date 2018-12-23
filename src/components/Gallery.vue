@@ -1,6 +1,6 @@
 <template>
   <div :class="`gallery ${imageUrl !== null ? 'display' : 'hide'}`">
-    <img :src="`https://acmzvywwen.cloudimg.io/cdno/n/q70/${imageUrl}`" class="gallery-img">
+    <img :src="`${imageUrl}`" class="gallery-img">
     <div class="gallery-desc">
       <span>{{imageDesc}}</span>
     </div>
