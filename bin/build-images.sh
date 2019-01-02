@@ -1,5 +1,5 @@
 # /bin/bash
-find ./public/raw -mindepth 2 -maxdepth 2 -type f -name '*.png' -name '*.jpg' -o -exec sh -c '
+find ./public/raw -mindepth 2 -maxdepth 2 -type f -name '*.png' -o -name '*.jpg' -exec sh -c '
   rm -rf ./public/photos
   for f do
     source=$f
