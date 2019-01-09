@@ -11,7 +11,7 @@ function getFileExtension(filename) {
 
 function gen() {
   const sections = []
-  const sectionList = fs.readdirSync(PHOTOS_DIR)
+  const sectionList = fs.readdirSync(PHOTOS_DIR).reverse()
   sectionList.forEach(dirName => {
     if (dirName === '.DS_Store' || dirName === 'index.json') {
       return
@@ -22,7 +22,8 @@ function gen() {
     const photosList = fs.readdirSync(dirFullName)
     photosList.forEach(function(filename) {
       images.push({
-        url: `${SCHEME}://${DOMAIN}/photos/${dirName}/${filename}`,
+        // url: `${SCHEME}://${DOMAIN}/photos/${dirName}/${filename}`,
+        url: `/photos/${dirName}/${filename}`,
         desc: filename.replace(getFileExtension(filename), '').split('-')[1],
       })
     })
