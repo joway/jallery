@@ -22,6 +22,13 @@ jobs:
             git config --global user.email "joway.w@gmail.com"
             git config --global user.name "Joway.CI"
       - run:
+          name: install imagic
+          command: |
+            apt update && apt-get install -y golang
+            export GOPATH=$HOME/work
+            export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+            go get github.com/joway/imagic
+      - run:
           name: npm install
           command: |
             npm install
