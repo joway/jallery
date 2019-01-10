@@ -21,9 +21,18 @@ function gen() {
     const images = []
     const photosList = fs.readdirSync(dirFullName)
     photosList.forEach(function(filename) {
+      if (filename.includes('thumbnail')) {
+        return
+      }
+      const pos = filename.lastIndexOf('.')
+      const thumbnailFilename = `${filename.substr(0, pos)}.thumbnail${filename.substr(
+        pos,
+        filename.length,
+      )}`
       images.push({
         // url: `${SCHEME}://${DOMAIN}/photos/${dirName}/${filename}`,
         url: `/photos/${dirName}/${filename}`,
+        thumbnailUrl: `/photos/${dirName}/${thumbnailFilename}`,
         desc: filename.replace(getFileExtension(filename), '').split('-')[1],
       })
     })

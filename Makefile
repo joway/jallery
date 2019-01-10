@@ -7,4 +7,4 @@ build-web:
 	npm run build
 
 build-images:
-	./bin/build-images.sh
+	./bin/imagic.sh

@@ -1,7 +1,7 @@
 <template>
   <div class="frame">
     <div class="frame-container">
-      <img class="frame-photo" :src="`${image.url}`" />
+      <img class="frame-photo" :src="`${image.thumbnailUrl}`" />
     </div>
   </div>
 </template>
