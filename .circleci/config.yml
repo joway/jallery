@@ -35,7 +35,9 @@ jobs:
       - run:
           name: build site
           command: |
-            make build-index build-web
+            export GOPATH=$HOME/work
+            export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+            make build
       - deploy:
           name: push newest site
           command: |
