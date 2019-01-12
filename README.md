@@ -1,4 +1,4 @@
-# jallery
+# Jallery
 
 ## Project setup
 ```
