@@ -63,23 +63,25 @@
                   oncontextmenu="return false;"
                   v-for="(image, index) in section.images"
                   :key="index"
+                  @click="clickImage(image)"
                 >
-                  <a :href="`#${section.title}+${index}`" @click="clickImage(image)">
-                    <div class="row center-xs">
-                      <Frame :image="image" />
-                    </div>
-                  </a>
+                  <div class="
+                  row
+                  center-xs"
+                >
+                  <Frame :image="image" />
                 </div>
               </div>
             </div>
           </div>
-
-          <footer class="row center-xs footer">
-            <h5>Shoot with ❤ </h5>
-          </footer>
         </div>
+
+        <footer class="row center-xs footer">
+          <h5>Shoot with ❤ </h5>
+        </footer>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
