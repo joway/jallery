@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-xs">
       <Gallery
+        v-if="galleryImageUrl"
         oncontextmenu="return false;"
         :imageUrl="galleryImageUrl"
         :imageDesc="galleryImageDesc"
@@ -62,11 +63,12 @@
                   oncontextmenu="return false;"
                   v-for="(image, index) in section.images"
                   :key="index"
-                  @click="clickImage(image)"
                 >
-                  <div class="row center-xs">
-                    <Frame :image="image" />
-                  </div>
+                  <a :href="`#${section.title}+${index}`" @click="clickImage(image)">
+                    <div class="row center-xs">
+                      <Frame :image="image" />
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
