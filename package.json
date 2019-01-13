@@ -11,7 +11,7 @@
     "axios": "^0.18.0",
     "blueimp-gallery": "^2.33.0",
     "flexboxgrid": "^6.3.1",
-    "vue": "^2.5.17",
+    "vue": "^2.5.22",
     "vue-class-component": "^6.0.0",
     "vue-gallery": "^1.4.0",
     "vue-property-decorator": "^7.0.0",
@@ -26,6 +26,6 @@
     "@vue/eslint-config-typescript": "^3.0.3",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.3",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.22"
   }
 }
