@@ -14,7 +14,7 @@
     "vue": "^2.5.17",
     "vue-class-component": "^7.0.2",
     "vue-gallery": "^1.4.0",
-    "vue-property-decorator": "^7.0.0",
+    "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
