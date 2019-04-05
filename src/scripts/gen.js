@@ -4,6 +4,11 @@ const PHOTOS_DIR = './public/photos'
 const PHOTOS_INDEX_FILENAME = './public/photos/index.json'
 const DOMAIN = process.env.DOMAIN || 'pho.joway.io'
 const SCHEME = process.env.SCHEME || 'https'
+const CDN_PREFIX = 'https://cdn.staticaly.com/img/'
+
+function injectCDN(url) {
+  return url.replace(/^(http|https):\/\//i, CDN_PREFIX)
+}
 
 function getFileExtension(filename) {
   return `.${filename.split('.').pop()}`
@@ -20,7 +25,7 @@ function gen() {
     const sectionTitle = dirFullName.split('-')[1]
     const images = []
     const photosList = fs.readdirSync(dirFullName)
-    photosList.forEach(function(filename) {
+    photosList.forEach(function (filename) {
       if (filename.includes('thumbnail')) {
         return
       }
@@ -30,8 +35,8 @@ function gen() {
         filename.length,
       )}`
       images.push({
-        // url: `${SCHEME}://${DOMAIN}/photos/${dirName}/${filename}`,
-        url: `/photos/${dirName}/${filename}`,
+        url: injectCDN(`${SCHEME}://${DOMAIN}/photos/${dirName}/${filename}`),
+        // url: `/photos/${dirName}/${filename}`,
         thumbnailUrl: `/photos/${dirName}/${thumbnailFilename}`,
         desc: filename.replace(getFileExtension(filename), '').split('-')[1],
       })
