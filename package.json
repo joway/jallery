@@ -23,7 +23,7 @@
     "@vue/cli-plugin-typescript": "^3.5.3",
     "@vue/cli-service": "^3.5.3",
     "@vue/eslint-config-prettier": "^3.0.3",
-    "@vue/eslint-config-typescript": "^3.0.3",
+    "@vue/eslint-config-typescript": "^4.0.0",
     "ts-node": "^7.0.1",
     "typescript": "^3.3.4000",
     "vue-template-compiler": "^2.6.10"
