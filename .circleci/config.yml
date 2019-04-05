@@ -42,18 +42,14 @@ jobs:
           name: push newest site
           command: |
             export msg=$(git log --pretty=format:%s -1)
-            if [ -n "$(git status --porcelain)" ]; then
-              mv ./dist /dist
-              mv ./.circleci /.circleci
-              git stash
-              git checkout gh-pages
-              find ./ -not -name '.git' -mindepth 1 -maxdepth 1 -print0 | xargs -0 rm -rf --
-              mv /dist/* ./
-              mv /.circleci ./.circleci
-              rm -rf ./public/raw
-              git add .
-              git commit --allow-empty -m "$msg"
-              git push -q https://${GITHUB_TOKEN}@github.com/joway/jallery.git gh-pages --force
-            else
-              echo "no changes";
-            fi
+            mv ./public /public
+            mv ./.circleci /.circleci
+            git stash
+            git checkout gh-pages
+            find ./ -not -name '.git' -mindepth 1 -maxdepth 1 -print0 | xargs -0 rm -rf --
+            mv /public/* ./
+            mv /.circleci ./.circleci
+            rm -rf ./public/raw
+            git add .
+            git commit --allow-empty -m "$msg"
+            git push -q https://${GITHUB_TOKEN}@github.com/joway/jallery.git gh-pages --force
