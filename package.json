@@ -13,7 +13,7 @@
     "flexboxgrid": "^6.3.1",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
-    "vue-gallery": "^1.4.0",
+    "vue-gallery": "^2.0.0",
     "vue-property-decorator": "^8.1.0",
     "vue-router": "^3.0.1"
   },
