@@ -18,6 +18,7 @@ export default class App extends Vue {}
 body {
   margin: 0;
   font-family: 'Karla', sans-serif;
+  background-color: whitesmoke;
 }
 a {
   text-decoration: none;
