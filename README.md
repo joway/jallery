@@ -1,21 +1,7 @@
 # Jallery
 
-## Project setup
-```
-npm install
-```
+## Tech Stack
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
+- Vue
+- [Imagic](https://github.com/joway/imagic)
+- [Staticaly](https://www.staticaly.com)
