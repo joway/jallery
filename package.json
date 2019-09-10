@@ -28,7 +28,7 @@
     "@vue/eslint-config-typescript": "^4.0.0",
     "eslint": "^5.16.0",
     "ts-node": "^8.3.0",
-    "typescript": "^3.6.2",
+    "typescript": "^3.6.3",
     "vue-template-compiler": "^2.6.10"
   }
 }
