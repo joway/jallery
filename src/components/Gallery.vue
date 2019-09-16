@@ -1,8 +1,8 @@
 <template>
   <div :class="`gallery ${imageUrl !== null ? 'display' : 'hide'}`">
-    <img :src="`${imageUrl}`" class="gallery-img">
+    <img :src="`${imageUrl}`" class="gallery-img" />
     <div class="gallery-desc">
-      <span>{{imageDesc}}</span>
+      <span>{{ imageDesc }}</span>
     </div>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default class Gallery extends Vue {
 }
 .gallery-img {
   position: absolute;
-  border: solid 10px #000;
+  /* border: solid 10px #000; */
   box-shadow: 20px 20px 20px #ccc;
   margin: auto;
   max-height: 80%;

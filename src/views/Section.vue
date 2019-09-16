@@ -6,7 +6,7 @@
         oncontextmenu="return false;"
         :imageUrl="galleryImageUrl"
         :imageDesc="galleryImageDesc"
-        @click.native="galleryImageUrl = null;galleryImageDesc=null;"
+        @click.native="galleryImageUrl = null;galleryImageDesc=null"
       ></Gallery>
 
       <div class="row page">
@@ -20,36 +20,18 @@
             <div class="col-xs-12 col-md-3">
               <div class="row end-xs">
                 <div class="col-xs nav">
-                  <a
-                    class="nav-item"
-                    href="https://blog.joway.io"
-                    target="_blank"
-                  >
-                    Blog
-                  </a>
+                  <a class="nav-item" href="https://blog.joway.io" target="_blank">Blog</a>
                   <a
                     class="nav-item"
                     href="https://www.instagram.com/joway.w/"
                     target="_blank"
-                  >
-                    Instagram
-                  </a>
-                  <a
-                    class="nav-item"
-                    href="https://joway.io"
-                    target="_blank"
-                  >
-                    @Joway
-                  </a>
+                  >Instagram</a>
+                  <a class="nav-item" href="https://joway.io" target="_blank">@Joway</a>
                 </div>
               </div>
             </div>
           </div>
-          <div
-            class="row section"
-            v-for="(section, index) in sections"
-            :key="index"
-          >
+          <div class="row section" v-for="(section, index) in sections" :key="index">
             <div class="col-xs">
               <div class="row end-xs">
                 <div class="col-xs">
@@ -65,22 +47,18 @@
                   :key="index"
                   @click="clickImage(image)"
                 >
-                  <div class="
-                  row
-                  center-xs"
-                >
-                  <Frame :image="image" />
+                  <div class="row center-xs">
+                    <Frame :image="image" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <footer class="row center-xs footer">
-        </footer>
+          <footer class="row center-xs footer"></footer>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -120,11 +98,6 @@ export default class Home extends Vue {
 }
 .page {
   margin: 0 50px;
-}
-.section {
-}
-.section-title {
-  /* margin-left: 64px; */
 }
 
 .nav {
