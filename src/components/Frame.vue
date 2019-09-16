@@ -31,8 +31,10 @@ export default class Frame extends Vue {
   justify-content: center;
 }
 .frame-container {
-  width: 225px;
-  height: 150px;
+  /* width: 225px;
+  height: 150px; */
+  width: 300px;
+  height: 200px;
   background-color: whitesmoke;
 
   display: flex;
