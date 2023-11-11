@@ -7,7 +7,8 @@ const SCHEME = process.env.SCHEME || 'https'
 const CDN_PREFIX = 'https://cdn.staticaly.com/img/'
 
 function injectCDN(url) {
-  return url.replace(/^(http|https):\/\//i, CDN_PREFIX)
+  return url
+  // return url.replace(/^(http|https):\/\//i, CDN_PREFIX)
 }
 
 function getFileExtension(filename) {
@@ -17,7 +18,7 @@ function getFileExtension(filename) {
 function gen() {
   const sections = []
   const sectionList = fs.readdirSync(PHOTOS_DIR).reverse()
-  sectionList.forEach(dirName => {
+  sectionList.forEach((dirName) => {
     if (dirName === '.DS_Store' || dirName === 'index.json') {
       return
     }
