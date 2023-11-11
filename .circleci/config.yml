@@ -24,7 +24,7 @@ jobs:
       - run:
           name: install imagic
           command: |
-            apt update && apt-get install -y golang-defaults
+            apt update && apt-get install -y golang
             export GOPATH=$HOME/work
             export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
             go get github.com/joway/imagic
