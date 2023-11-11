@@ -12,7 +12,7 @@ workflows:
 jobs:
   build:
     docker:
-      - image: node:10
+      - image: node:14
     steps:
       - checkout
       - run:
@@ -53,3 +53,5 @@ jobs:
             git add .
             git commit --allow-empty -m "$msg"
             git push -q https://${GITHUB_TOKEN}@github.com/joway/jallery.git gh-pages --force
+    # The resource_class feature allows configuring CPU and RAM resources for each job. Different resource classes are available for different executors. https://circleci.com/docs/2.0/configuration-reference/#resourceclass
+    resource_class: large
