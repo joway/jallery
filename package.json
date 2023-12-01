@@ -27,7 +27,7 @@
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/eslint-config-typescript": "^4.0.0",
     "eslint": "^5.16.0",
-    "ts-node": "^8.4.1",
+    "ts-node": "^10.1.0",
     "typescript": "^3.6.3",
     "vue-template-compiler": "^2.6.10"
   }
